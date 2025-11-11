@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalung Cantik Viral - Beli Sekarang</title>
+
+  <!-- Font modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #030712;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px 16px 80px;
+    }
+
+    /* HERO */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: rgba(148, 163, 253, 0.12);
+      color: #a5b4fc;
+      backdrop-filter: blur(8px);
+      margin-bottom: 8px;
+    }
+
+    .badge span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    .hero-media {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 10px;
+      background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.16), transparent),
+                  radial-gradient(circle at bottom, rgba(236, 72, 153, 0.12), transparent),
+                  #020817;
+      border: 1px solid rgba(148, 163, 253, 0.12);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 210px;
+      border-radius: 14px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("https://via.placeholder.com/480x800?text=Foto+Kalung+Cantik+9:16"); /* Ganti dengan foto produkmu */
+    }
+
+    .floating-tag {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 9px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 253, 0.35);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .floating-tag span.icon {
+      font-size: 11px;
+    }
+
+    .hero-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 10px;
+    }
+
+    .price-main {
+      font-size: 18px;
+      font-weight: 700;
+      color: #22c55e;
+    }
+
+    .price-old {
+      font-size: 10px;
+      color: #6b7280;
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    .price-note {
+      font-size: 9px;
+      color: #9ca3af;
+    }
+
+    .stock-pill {
+      font-size: 9px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(248, 250, 252, 0.02);
+      border: 1px solid rgba(251, 191, 36, 0.7);
+      color: #fbbf24;
+    }
+
+    /* CTA utama */
+    .cta-primary {
+      margin-top: 10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #6366f1, #ec4899);
+      color: #f9fafb;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+    }
+
+    .cta-sub {
+      font-size: 9px;
+      text-align: center;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    /* BENEFITS */
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 18px 0 6px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 9px;
+    }
+
+    .benefit-item {
+      padding: 7px 8px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(75, 85, 99, 0.45);
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .benefit-icon {
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    /* SPEC CARD */
+    .spec-card {
+      margin-top: 10px;
+      padding: 8px 9px;
+      border-radius: 14px;
+      background: rgba(9, 9, 11, 0.98);
+      border: 1px solid rgba(75, 85, 99, 0.5);
+      font-size: 9px;
+      color: #9ca3af;
+    }
+
+    .spec-card strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* TESTIMONI */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 8px;
+    }
+
+    .review-item {
+      padding: 7px 8px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(75, 85, 99, 0.5);
+      color: #9ca3af;
+    }
+
+    .review-name {
+      font-weight: 500;
+      font-size: 8px;
+      color: #e5e7eb;
+      margin-bottom: 2px;
+    }
+
+    /* TRUST */
+    .trust-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 8px;
+      color: #9ca3af;
+    }
+
+    .trust-pill {
+      padding: 6px 8px;
+      border-radius: 10px;
+      background: rgba(10, 13, 24, 0.98);
+      border: 1px solid rgba(148, 163, 253, 0.25);
+      flex: 1;
+    }
+
+    .trust-pill strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 8px;
+      color: #c7d2fe;
+    }
+
+    /* FLOATING CTA BOTTOM */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 8px 14px 10px;
+      background: radial-gradient(circle at top, rgba(15,23,42,0.96), #020817);
+      border-top: 1px solid rgba(75, 85, 99, 0.7);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .bottom-label {
+      font-size: 8px;
+      color: #9ca3af;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .bottom-label span {
+      display: block;
+      font-size: 10px;
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .bottom-cta {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #6366f1, #ec4899);
+      color: #f9fafb;
+      font-size: 9px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 481px) {
+      body {
+        display: flex;
+        justify-content: center;
+        background: radial-gradient(circle at top, #020817, #020202);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <div class="badge">
+      <span class="dot"></span>
+      KALUNG CANTIK VIRAL DI TIKTOK✨
+    </div>
+
+    <h1 class="hero-title">Kalung Cantik yang Bikin Kamu Auto Glowing di Setiap Story 📸</h1>
+    <p class="hero-sub">
+      Simple, elegan, nggak lebay. Sekali pakai, langsung kelihatan mahal & niat. Limited stock, jangan cuma lihat.
+    </p>
+
+    <div class="hero-media">
+      <div class="hero-card">
+        <div class="product-img"></div>
+        <div class="floating-tag">
+          <span class="icon">🔥</span> 1.200+ Terjual | Rating 4.9
+        </div>
+        <div class="hero-price-row">
+          <div>
+            <span class="price-main">Rp115.000</span>
+            <span class="price-old">Rp189.000</span>
+            <div class="price-note">Free box + bubble wrap aman</div>
+          </div>
+          <div class="stock-pill">Stok terbatas • Cepet habis</div>
+        </div>
+      </div>
+      <button class="cta-primary">
+        BELI SEKARANG → AMANKAN HARGA PROMO
+      </button>
+      <div class="cta-sub">
+        Bisa COD • Bayar di tempat • Kirim seluruh Indonesia
+      </div>
+    </div>
+
+    <!-- BENEFIT -->
+    <div class="section-title">Kenapa Kalung Ini Wajib Kamu Punya?</div>
+    <div class="benefits">
+      <div class="benefit-item">
+        <div class="benefit-icon">✅</div>
+        <div>
+          Tampil elegan tanpa ribet, cocok buat outfit harian & jalan malam.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💧</div>
+        <div>
+          Tahan air & keringat, nggak gampang pudar kalau dipakai terus.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎁</div>
+        <div>
+          Cocok banget buat kado pacar / sahabat, packaging sudah siap kasih.
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📸</div>
+        <div>
+          Fotogenic! Cakep banget kalau dipake selfie, konten TikTok / IG.
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEC -->
+    <div class="spec-card">
+      <strong>Detail Produk</strong><br />
+      • Bahan: Titanium / Stainless premium, halus & nyaman<br />
+      • Warna: Silver / Gold berkilau<br />
+      • Panjang rantai: ±45cm (adjustable)<br />
+      • Kulit sensitif friendly (lebih minim iritasi)<br />
+      • Include: Box eksklusif + pouch / card ucapan
+    </div>
+
+    <!-- TESTIMONI -->
+    <div class="section-title">Real Review Pembeli 💬</div>
+    <div class="reviews">
+      <div class="review-item">
+        <div class="review-name">Nadia ★★★★★</div>
+        “Asli lebih cantik dari foto, kelihatan mahal padahal harga masih masuk akal.”
+      </div>
+      <div class="review-item">
+        <div class="review-name">Bella ★★★★★</div>
+        “Pake ke kondangan, banyak banget yang nanya beli di mana. Packaging juga niat.”
+      </div>
+      <div class="review-item">
+        <div class="review-name">Salsa ★★★★★</div>
+        “Nggak bikin leher gatel, udah 2x order buat temen & adek.”
+      </div>
+      <div class="review-item">
+        <div class="review-name">Mita ★★★★★</div>
+        “Datengnya cepet, aman, sesuai foto. Recommended banget!”
+      </div>
+    </div>
+
+    <!-- TRUST -->
+    <div class="trust-row">
+      <div class="trust-pill">
+        <strong>Garansi Aman</strong>
+        Barang rusak / nggak sesuai? Bisa tukar baru & refund syarat mudah.
+      </div>
+      <div class="trust-pill">
+        <strong>Official Store</strong>
+        Dikirim dari gudang resmi, packing rapi, no abal-abal.
+      </div>
+    </div>
+  </div>
+
+  <!-- BAR CTA BAWAH -->
+  <div class="bottom-bar">
+    <div class="bottom-label">
+      Promo Spesial Hari Ini
+      <span>Rp115.000 • Klik untuk order sekarang</span>
+    </div>
+    <button class="bottom-cta">
+      BELI SEKARANG
+    </button>
+  </div>
+</body>
+</html>
